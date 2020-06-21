@@ -13,7 +13,7 @@
         <script src="owlcarousel/owl.carousel.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="http://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-		<link rel="stylesheet" type=text/css href="<?php echo base_url(); ?>/assets/css/stylesheet1.css">
+		<link rel="stylesheet" type=text/css href="<?php echo base_url(); ?>assets/css/stylesheet1.css">
     </head>
     <body>
     <header>

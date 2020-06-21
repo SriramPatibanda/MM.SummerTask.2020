@@ -61,7 +61,7 @@
 }
 
 body{
-    background-color:black;
+    background-color:white;
 }
 
 .news-today h3{
@@ -137,4 +137,8 @@ footer{
 
 .post-body{
     margin:30px;
+}
+
+.post-thumb{
+    width:100%;
 }
