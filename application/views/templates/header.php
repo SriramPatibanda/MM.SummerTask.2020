@@ -66,11 +66,11 @@
                 <div class="Login">	
                 
                 <li class="nav-item">
-                        <a class="nav-link" href="loginform.php">Login</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/register">Register</a>
                     </li>
                 </div>
             </ul>
         </div>
     </div>
-
+</nav>
 </header>
