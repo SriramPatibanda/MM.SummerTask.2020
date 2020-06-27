@@ -1,32 +1,32 @@
 <div class="post-body">
 
-<h2><?php echo $post['title']; ?></h2>
-<small class="post-date">Posted on: <?php echo $post['created_at']; ?> </small><br>
-<img src="<?php echo base_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>">
+    <h2><?php echo $post['title']; ?></h2>
+    <small class="post-date">Posted on: <?php echo $post['created_at']; ?> </small><br>
+    <img src="<?php echo base_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>">
     <?php echo $post['body']; ?>
 
 
-<hr>
-<a class= "btn btn-success pull-left" href="<?php echo base_url(); ?>index.php/posts/edit/<?php echo $post['slug']; ?>">Edit</a>
+    <hr>
+    <a class="btn btn-success pull-left" href="<?php echo base_url(); ?>index.php/posts/edit/<?php echo $post['slug']; ?>">Edit</a>
 
-<?php echo form_open('/posts/delete/'.$post['id']); ?>
+    <?php echo form_open('/posts/delete/' . $post['id']); ?>
     <input type="submit" value="Delete" class="btn btn-danger">
-</form>
-<hr>
-<h3> Comments </h3>
-<?php if($comments) : ?>
-    <?php foreach($comments as $comment) : ?>
-    <div class= "well">
-        <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name'];?></strong>]</h5>
-    </div>
-    <?php endforeach; ?>
-<?php else : ?>
-    <p> No Comments to display </p>
-<?php endif; ?>
-<hr>
-<h3>Add Comment</h3>
-<?php echo validation_errors(); ?>
-<?php echo form_open('comments/create/'.$post['id']); ?>
+    </form>
+    <hr>
+    <h3> Comments </h3>
+    <?php if ($comments) : ?>
+        <?php foreach ($comments as $comment) : ?>
+            <div class="well">
+                <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
+            </div>
+        <?php endforeach; ?>
+    <?php else : ?>
+        <p> No Comments to display </p>
+    <?php endif; ?>
+    <hr>
+    <h3>Add Comment</h3>
+    <?php echo validation_errors(); ?>
+    <?php echo form_open('comments/create/' . $post['id']); ?>
     <div class="form-group">
         <label>Name</label>
         <input type="text" name="name" class="form-control">
@@ -39,9 +39,9 @@
         <label>Body</label>
         <textarea name="body" class="form-control"></textarea>
     </div>
-    <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>"> 
+    <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
     <button class="btn btn-primary" type="submit">Submit</button>
-</form>
+    </form>
 
 </div>
 
