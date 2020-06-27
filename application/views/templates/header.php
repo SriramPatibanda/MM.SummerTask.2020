@@ -74,3 +74,21 @@
     </div>
 </nav>
 </header>
+
+<div class="container">
+<!--Flash messages-->
+<?php if($this->session->flashdata('user_registered')): ?>
+    <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('post_created')): ?>
+    <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('post_updated')): ?>
+    <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('category_created')): ?>
+    <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+<?php endif; ?>
