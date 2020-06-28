@@ -61,12 +61,12 @@
                             <?php foreach($posts as $post) : ?>
 								<div class="card">
 									
-									<img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/4/42/LinkinParkBerlin2010.jpg"> 
+									<img class="card-img-top" src="<?php echo base_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>"> 
                                     
 									<div class="card-body">
- 									<a href="#" class="stretched-link">
+ 									<a href="<?php echo site_url('/posts/' . $post['slug']); ?>" class="stretched-link">
 										<p class="card-text">
-                                            <?php echo word_limiter($post['body'], 90); ?>
+                                            <?php echo word_limiter($post['body'], 80); ?>
 										</p>
 									</a>
 									</div>
