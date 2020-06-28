@@ -3,10 +3,13 @@ class Posts extends CI_Controller
 {
     public function index($offset = 0)
     {
-        $config['base_url'] = base_url().'index.php/posts/index';
+        $config['base_url'] = base_url().'index.php/posts/index/';
         $config['total_rows'] = $this->db->count_all('posts');
         $config['per_page'] = 3;
-        $config['uri_segment'] = 4;
+        $config['uri_segment'] = 3;
+        $config['attributes'] = array('class' => 'pagination-link');
+
+        $this->pagination->initialize($config);
 
         $data['title'] = 'Latest Posts';
 
