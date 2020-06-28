@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>homepage</title>
+    <title><?php $title; ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -20,32 +20,16 @@
 <body>
     <header>
 
-        <nav class="navbar navbar-expand-sm navbar-light" style="display:grid;grid-template-columns:1fr 7fr 3fr;grid-template-rows:auto;">
+        <nav class="navbar navbar-expand-sm navbar-light" style="display:grid;grid-template-columns:1fr 7fr 1fr;grid-template-rows:auto;">
             <a class="navbar-brand" href="<?php echo base_url(); ?> ">Gazette</a>
             <div class="main_nav">
                 <ul class="navbar-nav">
-
+                <?php foreach($categories as $category) : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>index.php/posts">International</a>
+                        <a class="nav-link" href="<?php echo site_url('/categories/posts/'.$category['id']); ?>"><?php echo $category['name'] ?></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">National</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Regional</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Business </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Entertainment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Technology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sports</a>
-                    </li>
+                <?php endforeach; ?>
+                   
                 </ul>
             </div>
             <div class="right_nav">

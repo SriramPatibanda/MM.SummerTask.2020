@@ -15,30 +15,12 @@
 				</ul>
 
 			<div class="carousel-inner">
+            <?php foreach($posts as $post) : ?>
 				<div class="carousel-item active">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/4/42/LinkinParkBerlin2010.jpg">
-				</div>
+					<img src="<?php echo base_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>">
+                </div>
+            <?php endforeach; ?>
 
-				<div class="carousel-item">
-					<img src="https://i.redd.it/w4botl43ntm21.png">
-				</div>
-
-				<div class="carousel-item">
-					<img src="https://images2.alphacoders.com/742/thumb-1920-742320.png">
-				</div>
-
-
-				<div class="carousel-item">
-					<img src="https://images.hdqwalls.com/download/death-note-anime-2048x1152.jpg">
-				</div>
-
-				<div class="carousel-item">
-					<img src="https://7wallpapers.net/wp-content/uploads/5_Queen.jpg">
-				</div>
-
-				<div class="carousel-item">
-					<img src="https://www.esportsportal.com/wp-content/uploads/2019/06/game-of-thrones-a-telltale-games-series-hd-wallpapers-33155-7193722.jpg" >
-				</div>
 
 				 <a class="carousel-control-prev" href="#demo" data-slide="prev">
 					     <span class="carousel-control-prev-icon"></span>
@@ -51,28 +33,32 @@
 		</div>
 	</div>
     </div>
+
         <div class="row">
+
 			<div class="col-sm-9">
                 <div class="news-today">
                     <h3> Today's News</h3>
 				<div class="card-deck">
-					<div class="row">		
+					<div class="row">	
+                    <?php foreach($posts as $post) : ?>	
 							<div class="col-sm-4">
-                            <?php foreach($posts as $post) : ?>
+                            
 								<div class="card">
-									
+                                
 									<img class="card-img-top" src="<?php echo base_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>"> 
-                                    
+                             
 									<div class="card-body">
  									<a href="<?php echo site_url('/posts/' . $post['slug']); ?>" class="stretched-link">
 										<p class="card-text">
-                                            <?php echo word_limiter($post['body'], 80); ?>
+                                            <?php echo word_limiter($post['body'], 40); ?>
 										</p>
 									</a>
 									</div>
                                 </div>
-                            <?php endforeach; ?>
+                            
                                </div>
+                               <?php endforeach; ?>
                               </div>
 								<div class="row">
 						
@@ -246,11 +232,6 @@
         </div>
         
 
-        <div class="additional-news">
-            <div class="card">
-                <img class="card-img-left" src="https://upload.wikimedia.org/wikipedia/commons/4/42/LinkinParkBerlin2010.jpg">
-                <p class="card-text">Linkin Park is an American rock band from Agoura Hills, California. The band's current lineup comprises vocalist/rhythm guitarist Mike Shinoda, lead guitarist Brad Delson,...</p>
-            </div>
-        </div>
+        
 </div>
 </div> -

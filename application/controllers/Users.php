@@ -2,6 +2,7 @@
     class Users extends CI_Controller{
         public function register(){
             $data['title'] = 'Signup';
+            $data['categories'] = $this->category_model->get_categories();
 
             $this->form_validation->set_rules('name', 'Name', 'required');
             $this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
@@ -10,7 +11,7 @@
             $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
 
             if($this->form_validation->run() === FALSE){
-                $this->load->view('templates/header');
+                $this->load->view('templates/header', $data);
                 $this->load->view('users/register', $data);
                 $this->load->view ('templates/footer');
             }else{
@@ -28,13 +29,14 @@
         //login user
         public function login(){
             $data['title'] = 'Login';
+            $data['categories'] = $this->category_model->get_categories();
 
             $this->form_validation->set_rules('username', 'Username', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required');
             
 
             if($this->form_validation->run() === FALSE){
-                $this->load->view('templates/header');
+                $this->load->view('templates/header', $data);
                 $this->load->view('users/login', $data);
                 $this->load->view('templates/footer');
             }else{

@@ -15,7 +15,9 @@ class Posts extends CI_Controller
 
         $data['posts'] = $this->post_model->get_posts(FALSE, $config['per_page'], $offset);
 
-        $this->load->view('templates/header');
+        $data['categories'] = $this->category_model->get_categories();
+
+        $this->load->view('templates/header', $data);
         $this->load->view('posts/index', $data);
         $this->load->view('templates/footer');
     }
@@ -25,13 +27,15 @@ class Posts extends CI_Controller
         $post_id = $data['post']['id'];
         $data['comments'] = $this->comment_model->get_comments($post_id);
 
+        $data['categories'] = $this->category_model->get_categories();
+
         if (empty($data['post'])) {
             show_404();
         }
 
         $data['title'] = $data['post']['title'];
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
         $this->load->view('posts/view', $data);
         $this->load->view('templates/footer');
     }
@@ -53,7 +57,7 @@ class Posts extends CI_Controller
 
         if ($this->form_validation->run() === FALSE) {
 
-            $this->load->view('templates/header');
+            $this->load->view('templates/header', $data);
             $this->load->view('posts/create', $data);
             $this->load->view('templates/footer');
         } else {
@@ -83,6 +87,7 @@ class Posts extends CI_Controller
 
     public function delete($id)
     {
+        $data['categories'] = $this->category_model->get_categories();
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }
@@ -93,6 +98,7 @@ class Posts extends CI_Controller
 
     public function edit($slug)
     {
+        $data['categories'] = $this->category_model->get_categories();
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }
@@ -109,13 +115,14 @@ class Posts extends CI_Controller
         }
 
         $data['title'] = 'Edit Post';
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
         $this->load->view('posts/edit', $data);
         $this->load->view('templates/footer');
     }
 
     public function update()
     {
+        $data['categories'] = $this->category_model->get_categories();
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }

@@ -4,7 +4,7 @@
             $data['title'] = 'Catergories';
             $data['categories'] = $this->category_model->get_categories(); 
             
-            $this->load->view('templates/header');
+            $this->load->view('templates/header', $data);
             $this->load->view('categories/index', $data);
             $this->load->view('templates/footer'); 
         }
@@ -13,11 +13,12 @@
                 redirect('users/login');
             }
             $data['title'] = 'Create Catergory';
+            $data['categories'] = $this->category_model->get_categories();
 
             $this->form_validation->set_rules('name', 'Name', 'required');
 
             if($this->form_validation->run() === FALSE){
-                $this->load->view('templates/header');
+                $this->load->view('templates/header', $data);
                 $this->load->view('categories/create', $data);
                 $this->load->view('templates/footer');   
             }else{
@@ -32,8 +33,9 @@
             $data['title'] = $this->category_model->get_category($id) -> name;
         
             $data['posts'] = $this->post_model->get_posts_by_category($id);
+            $data['categories'] = $this->category_model->get_categories();
 
-            $this->load->view('templates/header');
+            $this->load->view('templates/header', $data);
             $this->load->view('posts/index', $data);
             $this->load->view('templates/footer');  
         }
