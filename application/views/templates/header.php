@@ -24,12 +24,12 @@
             <a class="navbar-brand" href="<?php echo base_url(); ?> ">Gazette</a>
             <div class="main_nav">
                 <ul class="navbar-nav">
-                <?php foreach($categories as $category) : ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('/categories/posts/'.$category['id']); ?>"><?php echo $category['name'] ?></a>
-                    </li>
-                <?php endforeach; ?>
-                   
+                    <?php foreach ($categories as $category) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo site_url('/categories/posts/' . $category['id']); ?>"><?php echo $category['name'] ?></a>
+                        </li>
+                    <?php endforeach; ?>
+
                 </ul>
             </div>
             <div class="right_nav">
@@ -47,21 +47,21 @@
                     </div>
               </li>
               -->
-                    <?php if($this->session->userdata('logged_in')) : ?>
-                    <li>
-                        <a class="nav-link" href="<?php echo base_url(); ?>index.php/posts/create">Create Post</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/logout">Logout</a>
-                    </li>
+                    <?php if ($this->session->userdata('logged_in')) : ?>
+                        <li>
+                            <a class="nav-link" href="<?php echo base_url(); ?>index.php/posts/create">Create Post</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/logout">Logout</a>
+                        </li>
                     <?php endif; ?>
-                    <?php if(!$this->session->userdata('logged_in')) : ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/register">Register</a>
-                    </li>
+                    <?php if (!$this->session->userdata('logged_in')) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/register">Register</a>
+                        </li>
                     <?php endif; ?>
                 </ul>
             </div>
