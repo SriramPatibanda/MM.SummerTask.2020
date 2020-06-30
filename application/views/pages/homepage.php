@@ -46,9 +46,9 @@
                                 <img class="card-img-top" src="<?php echo base_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>">
 
                                 <div class="card-body">
-                                    <a href="<?php echo site_url('/posts/' . $post['slug']); ?>" >
-                                        <h4 class="card-title"><?php echo $post['title']; ?></h4>
-                                    </a>
+                                    
+                                        <h4 class="card-title"><a href="<?php echo site_url('/posts/' . $post['slug']); ?>" ><?php echo $post['title']; ?> </a></h4>
+                                   
                                     <p class="card-text">
                                         <?php echo word_limiter($post['body'], 40); ?>
                                     </p>

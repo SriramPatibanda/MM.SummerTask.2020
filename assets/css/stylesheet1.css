@@ -31,8 +31,12 @@
     width: 100%;
 }
 
+.card-body a:link {
+    color: #7e57c2;
+}
+
 .card-body a:hover {
-    color: ;
+    color: red;
     text-decoration: none;
 }
 
