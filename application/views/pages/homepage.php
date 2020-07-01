@@ -46,9 +46,9 @@
                                 <img class="card-img-top" src="<?php echo base_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>">
 
                                 <div class="card-body">
-                                    
-                                        <h4 class="card-title"><a href="<?php echo site_url('/posts/' . $post['slug']); ?>" ><?php echo $post['title']; ?> </a></h4>
-                                   
+
+                                    <h4 class="card-title"><a href="<?php echo site_url('/posts/' . $post['slug']); ?>"><?php echo $post['title']; ?> </a></h4>
+
                                     <p class="card-text">
                                         <?php echo word_limiter($post['body'], 40); ?>
                                     </p>
@@ -59,20 +59,7 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="row">
 
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-
-                    </div>
-                    <div class="col-sm-4">
-
-                    </div>
-                    <div class="col-sm-4">
-
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -87,145 +74,151 @@
     </div>
 
     <div class="col-sm-3">
-        <div class="container">
-            <div class="poll">
-                <h3>Poll</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="container">
+                    <div class="poll">
+                        <h3>Poll</h3>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/stocks-india/" rel="noopener" target="_blank"><span class="blue-text">Stock Quotes</span></a> by TradingView</div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                {
-                    "title": "Stocks",
-                    "tabs": [{
-                            "title": "Financial",
-                            "symbols": [{
-                                    "s": "NYSE:JPM",
-                                    "d": "Jpmorgan Chase & Co"
-
-                                },
-                                {
-                                    "s": "NYSE:WFC",
-                                    "d": "Wells Fargo Co New"
-
-                                },
-                                {
-                                    "s": "NYSE:BAC",
-                                    "d": "Bank Amer Corp"
-
-                                },
-                                {
-                                    "s": "NYSE:HSBC",
-                                    "d": "Hsbc Hldgs Plc"
-
-                                },
-                                {
-                                    "s": "NYSE:C",
-                                    "d": "Citigroup Inc"
-
-                                },
-                                {
-                                    "s": "NYSE:MA",
-                                    "d": "Mastercard Incorporated"
-
-                                }
-
-                            ]
-
-                        },
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/stocks-india/" rel="noopener" target="_blank"><span class="blue-text">Stock Quotes</span></a> by TradingView</div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
                         {
-                            "title": "Technology",
-                            "symbols": [{
-                                    "s": "NASDAQ:AAPL",
-                                    "d": "Apple"
+                            "title": "Stocks",
+                            "tabs": [{
+                                    "title": "Financial",
+                                    "symbols": [{
+                                            "s": "NYSE:JPM",
+                                            "d": "Jpmorgan Chase & Co"
+
+                                        },
+                                        {
+                                            "s": "NYSE:WFC",
+                                            "d": "Wells Fargo Co New"
+
+                                        },
+                                        {
+                                            "s": "NYSE:BAC",
+                                            "d": "Bank Amer Corp"
+
+                                        },
+                                        {
+                                            "s": "NYSE:HSBC",
+                                            "d": "Hsbc Hldgs Plc"
+
+                                        },
+                                        {
+                                            "s": "NYSE:C",
+                                            "d": "Citigroup Inc"
+
+                                        },
+                                        {
+                                            "s": "NYSE:MA",
+                                            "d": "Mastercard Incorporated"
+
+                                        }
+
+                                    ]
 
                                 },
                                 {
-                                    "s": "NASDAQ:GOOGL",
-                                    "d": "Google Inc"
+                                    "title": "Technology",
+                                    "symbols": [{
+                                            "s": "NASDAQ:AAPL",
+                                            "d": "Apple"
+
+                                        },
+                                        {
+                                            "s": "NASDAQ:GOOGL",
+                                            "d": "Google Inc"
+
+                                        },
+                                        {
+                                            "s": "NASDAQ:MSFT",
+                                            "d": "Microsoft Corp"
+
+                                        },
+                                        {
+                                            "s": "NASDAQ:FB",
+                                            "d": "Facebook Inc"
+
+                                        },
+                                        {
+                                            "s": "NYSE:ORCL",
+                                            "d": "Oracle Corp"
+
+                                        },
+                                        {
+                                            "s": "NASDAQ:INTC",
+                                            "d": "Intel Corp"
+
+                                        }
+
+                                    ]
 
                                 },
                                 {
-                                    "s": "NASDAQ:MSFT",
-                                    "d": "Microsoft Corp"
+                                    "title": "Services",
+                                    "symbols": [{
+                                            "s": "NASDAQ:AMZN",
+                                            "d": "Amazon Com Inc"
 
-                                },
-                                {
-                                    "s": "NASDAQ:FB",
-                                    "d": "Facebook Inc"
+                                        },
+                                        {
+                                            "s": "NYSE:BABA",
+                                            "d": "Alibaba Group Hldg Ltd"
 
-                                },
-                                {
-                                    "s": "NYSE:ORCL",
-                                    "d": "Oracle Corp"
+                                        },
+                                        {
+                                            "s": "NYSE:T",
+                                            "d": "At&t Inc"
 
-                                },
-                                {
-                                    "s": "NASDAQ:INTC",
-                                    "d": "Intel Corp"
+                                        },
+                                        {
+                                            "s": "NYSE:WMT",
+                                            "d": "Wal-mart Stores Inc"
+
+                                        },
+                                        {
+                                            "s": "NYSE:CHL",
+                                            "d": "China Mobile Limited"
+
+                                        },
+                                        {
+                                            "s": "NYSE:V",
+                                            "d": "Visa Inc"
+
+                                        }
+
+                                    ]
 
                                 }
 
-                            ]
-
-                        },
-                        {
-                            "title": "Services",
-                            "symbols": [{
-                                    "s": "NASDAQ:AMZN",
-                                    "d": "Amazon Com Inc"
-
-                                },
-                                {
-                                    "s": "NYSE:BABA",
-                                    "d": "Alibaba Group Hldg Ltd"
-
-                                },
-                                {
-                                    "s": "NYSE:T",
-                                    "d": "At&t Inc"
-
-                                },
-                                {
-                                    "s": "NYSE:WMT",
-                                    "d": "Wal-mart Stores Inc"
-
-                                },
-                                {
-                                    "s": "NYSE:CHL",
-                                    "d": "China Mobile Limited"
-
-                                },
-                                {
-                                    "s": "NYSE:V",
-                                    "d": "Visa Inc"
-
-                                }
-
-                            ]
+                            ],
+                            "width": 400,
+                            "height": 660,
+                            "showChart": true,
+                            "locale": "in",
+                            "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
+                            "plotLineColorFalling": "rgba(33, 150, 243, 1)",
+                            "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+                            "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+                            "gridLineColor": "#F0F3FA",
+                            "scaleFontColor": "rgba(120, 123, 134, 1)",
+                            "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+                            "colorTheme": "light"
 
                         }
-
-                    ],
-                    "width": 400,
-                    "height": 660,
-                    "showChart": true,
-                    "locale": "in",
-                    "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
-                    "plotLineColorFalling": "rgba(33, 150, 243, 1)",
-                    "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
-                    "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
-                    "gridLineColor": "#F0F3FA",
-                    "scaleFontColor": "rgba(120, 123, 134, 1)",
-                    "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
-                    "colorTheme": "light"
-
-                }
-            </script>
+                    </script>
+                </div>
+            </div>
         </div>
-
 
 
     </div>
